@@ -23,18 +23,29 @@ function App() {
 
   return (
     <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
+      <img src="/logo2.svg" alt="DFINITY logo"/>
+      
       <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="title">Judul Pengaduan &nbsp;</label>
-        <input id="title" alt="title" type="text" />
-        <label htmlFor="body">Isi Pengaduan &nbsp;</label>
-        <input id="body" alt="body" type="text" />
-        <label htmlFor="location">Lokasi Pengaduan &nbsp;</label>
-        <input id="location" alt="location" type="text" />
-
+        <div className="form-group">
+          <label htmlFor="title">Judul Pengaduan &nbsp;</label>
+          <input id="title" alt="title" type="text" />
+        </div>
+        <div class="form-group">
+          <label htmlFor="body">Isi Pengaduan &nbsp;</label>
+          <textarea id="body" alt="body" type="text" minLength="5" maxLength="300"/>
+        </div>
+        <div class="form-group">
+          <label htmlFor="location">Lokasi Pengaduan &nbsp;</label>
+          <input id="location" alt="location" type="text" />
+        </div>
+        
         <button type="submit">Click Me!</button>
       </form>
-      <section id="report">{report}</section>
+      <section id="report">
+        <h3 className="title">{title}</h3>
+        <p className="location">{location}</p>
+        <p className="body">{body}</p>
+      </section>
     </main>
   );
 }
