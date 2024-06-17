@@ -2,13 +2,21 @@ import { useState } from 'react';
 import { rust_icp_backend } from 'declarations/rust_icp_backend';
 
 function App() {
-  const [greeting, setGreeting] = useState('');
+  const [report, setReport] = useState('');
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+  const [location, setLocation] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
-    const name = event.target.elements.name.value;
-    rust_icp_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
+    const title = event.target.elements.title.value;
+    const body = event.target.elements.body.value;
+    const location = event.target.elements.location.value;
+    rust_icp_backend.report(title, body, location).then((report) => {
+      setTitle(title);
+      setBody(body);
+      setLocation(location);
+      setReport(report);
     });
     return false;
   }
@@ -16,14 +24,17 @@ function App() {
   return (
     <main>
       <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
       <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
+        <label htmlFor="title">Judul Pengaduan &nbsp;</label>
+        <input id="title" alt="title" type="text" />
+        <label htmlFor="body">Isi Pengaduan &nbsp;</label>
+        <input id="body" alt="body" type="text" />
+        <label htmlFor="location">Lokasi Pengaduan &nbsp;</label>
+        <input id="location" alt="location" type="text" />
+
         <button type="submit">Click Me!</button>
       </form>
-      <section id="greeting">{greeting}</section>
+      <section id="report">{report}</section>
     </main>
   );
 }
