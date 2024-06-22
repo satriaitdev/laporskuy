@@ -1,4 +1,4 @@
 #[ic_cdk::query]
-fn greet(name: String) -> String {
-    format!("Hello, {}!", name)
+fn report(name: String, body: String, location: String) -> String {
+    format!("Judul pengaduan: {}, Isi Pengaduan: {}, Lokasi: {}", name, body, location)
 }
