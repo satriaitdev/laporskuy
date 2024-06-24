@@ -373,11 +373,21 @@ function MyComponent () {
               <div class="text-2xl tracking-tight">
                 Subscribe to our <br /> newsletter
               </div>
-              <form class="flex flex-col mt-8 text-base tracking-normal">
+              <form class="flex flex-col mt-8 text-base tracking-normal max-w-md mx-auto">
                 <label for="email" class="sr-only">Email address</label>
-                <div class="flex gap-5 justify-between items-end max-md:pr-5">
-                  <input type="email" id="email" placeholder="Email address" class="my-auto p-2 border-2 border-gray-300 rounded" />
-                  <img class="shrink-0 aspect-square w-[50px]" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4cea2538da73c30553bef3df6208ed616fefe931b0fa455d566858487f1f429a?apiKey=64570b4ebbd14571bc0f37f617206081&" alt="" />
+                <div class="flex gap-5 justify-between items-end max-md:pr-5 max-md:flex-col max-md:gap-2">
+                  <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Email address" 
+                    class="my-auto p-2 border-2 border-gray-300 rounded w-full max-md:w-auto max-md:my-0" 
+                  />
+                  <img 
+                    class="shrink-0 aspect-square w-[50px] max-md:w-[30px]" 
+                    loading="lazy" 
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/4cea2538da73c30553bef3df6208ed616fefe931b0fa455d566858487f1f429a?apiKey=64570b4ebbd14571bc0f37f617206081&" 
+                    alt="" 
+                  />
                 </div>
                 <div class="shrink-0 h-px bg-white"></div>
               </form>
