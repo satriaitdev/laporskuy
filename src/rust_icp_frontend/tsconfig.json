@@ -28,3 +28,4 @@
     "src"
   ]
 }
+// In case u got error @testing-library/jest-dom not found or something like that, just run this command >> npm install --save-dev @types/testing-library__jest-dom
