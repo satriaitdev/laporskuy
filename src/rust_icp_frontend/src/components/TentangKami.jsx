@@ -15,11 +15,14 @@ const TentangKami = () => {
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow px-4 pt-5 pb-10 w-full tracking-wide text-black rounded-xl shadow-lg bg-white bg-opacity-40 max-md:mt-9">
-              <img
+           <div className='flex items-start justify-start'>    
+             <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb7226459a85204372193aff6929b9d827ff1024c128c37951e271bc9cc6b4b2?"
-                className="w-6 aspect-square"
+                className="w-6"
               />
+              </div>
+         
               <div className="mt-4 text-4xl font-medium leading-10">
                 Mudah digunakan
               </div>
