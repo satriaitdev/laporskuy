@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { rust_icp_backend } from 'declarations/rust_icp_backend';
+import { rust_icp_backend } from 'declarations/rust_icp_backend';
 import TentangKami from '../../components/TentangKami';
 
 function MyComponent () {
@@ -15,10 +15,12 @@ function MyComponent () {
     const location = event.target.elements.lokasiKejadian.value;
     rust_icp_backend.report(title, body, location).then((report) => {
       setTitle(title);
+      console.log('test');
       setBody(body);
       setLocation(location);
       setReport(report);
     });
+    event.target.reset();
     return false;
   }
 
@@ -181,27 +183,27 @@ function MyComponent () {
           <div class="flex-auto max-md:max-w-full">
             <div class="flex gap-5 max-md:flex-col max-md:gap-0 px-6 sm:px-0 relative">
               <svg class="absolute top-[30%]" width="191" height="386" viewBox="0 0 191 386" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g opacity="0.3" filter="url(#filter0_f_102_1126)">
-  <circle cx="-2.1375" cy="192.863" r="167.863" transform="rotate(-90 -2.1375 192.863)" fill="url(#paint0_linear_102_1126)"/>
-  <circle cx="-2.1375" cy="192.863" r="167.003" transform="rotate(-90 -2.1375 192.863)" stroke="url(#paint1_linear_102_1126)" stroke-width="1.71873"/>
-  </g>
-  <defs>
-  <filter id="filter0_f_102_1126" x="-194.99" y="0.00979996" width="385.706" height="385.706" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-  <feGaussianBlur stdDeviation="12.4951" result="effect1_foregroundBlur_102_1126"/>
-  </filter>
-  <linearGradient id="paint0_linear_102_1126" x1="-78.53" y1="25.0001" x2="130.544" y2="281.317" gradientUnits="userSpaceOnUse">
-  <stop stop-color="white"/>
-  <stop offset="1" stop-color="white" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="paint1_linear_102_1126" x1="-170" y1="65.1038" x2="184.367" y2="180.831" gradientUnits="userSpaceOnUse">
-  <stop offset="0.0572917" stop-color="white"/>
-  <stop offset="0.244792" stop-color="#6CE5FF"/>
-  <stop offset="0.651042" stop-color="#B570FE"/>
-  <stop offset="0.869792" stop-color="white"/>
-  </linearGradient>
-  </defs>
+                <g opacity="0.3" filter="url(#filter0_f_102_1126)">
+                <circle cx="-2.1375" cy="192.863" r="167.863" transform="rotate(-90 -2.1375 192.863)" fill="url(#paint0_linear_102_1126)"/>
+                <circle cx="-2.1375" cy="192.863" r="167.003" transform="rotate(-90 -2.1375 192.863)" stroke="url(#paint1_linear_102_1126)" stroke-width="1.71873"/>
+                </g>
+                <defs>
+                <filter id="filter0_f_102_1126" x="-194.99" y="0.00979996" width="385.706" height="385.706" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feGaussianBlur stdDeviation="12.4951" result="effect1_foregroundBlur_102_1126"/>
+                </filter>
+                <linearGradient id="paint0_linear_102_1126" x1="-78.53" y1="25.0001" x2="130.544" y2="281.317" gradientUnits="userSpaceOnUse">
+                <stop stop-color="white"/>
+                <stop offset="1" stop-color="white" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_102_1126" x1="-170" y1="65.1038" x2="184.367" y2="180.831" gradientUnits="userSpaceOnUse">
+                <stop offset="0.0572917" stop-color="white"/>
+                <stop offset="0.244792" stop-color="#6CE5FF"/>
+                <stop offset="0.651042" stop-color="#B570FE"/>
+                <stop offset="0.869792" stop-color="white"/>
+                </linearGradient>
+                </defs>
               </svg>
               <svg class="absolute top-0 end-0" width="190" height="417" viewBox="0 0 190 417" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.9">
@@ -284,9 +286,9 @@ function MyComponent () {
                       Choose File
                     </button>
                   </div>
-                  <div class="mt-2 text-sm text-rose-500 max-md:max-w-full" role="alert">
+                  {/* <div class="mt-2 text-sm text-rose-500 max-md:max-w-full" role="alert">
                     Error message informing me of a problem
-                  </div>
+                  </div> */}
                   <div class="flex justify-end mt-8 text-base text-center gap-4">
                     <button class="flex flex-col justify-center p-4 text-violet-500 bg-white rounded-lg border border-violet-500 border-solid">
                       Cancel
@@ -297,6 +299,10 @@ function MyComponent () {
                   </div>
                 </div>
               </form>
+
+              <div id='report'>
+                {report}
+              </div>
             </div>
           </div>
         </div>
